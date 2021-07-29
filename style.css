@@ -14,13 +14,35 @@ main{
 }
 nav{
     position: fixed;
-    right: 2%;
 }
 ul{
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-align: center;
+    position: fixed;
+    top: 45%;
+    right: 2%;
+}
+button{
+    width: 3vw;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: fixed;
+    color: #ffffff;
+    font-size: 3vw;
+    text-align: center;
+    background-color: #202020;
+}
+#arrow-up{
+    top: 5%;
+    animation: ArrowUpAnimation 0.8s linear 0s infinite alternate;
+    display: none;
+}
+#arrow-down{
+    bottom: 5%;
+    animation: ArrowDownAnimation 0.8s linear 0s infinite alternate;
 }
 li::before{
     content: ' ';
@@ -40,4 +62,11 @@ h1{
     margin: 0;
     padding: 0;
     font-size: 200px;
+}
+
+@keyframes ArrowDownAnimation{
+    to{bottom: 4%;}
+}
+@keyframes ArrowUpAnimation{
+    to{top: 4%;}
 }

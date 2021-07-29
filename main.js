@@ -1,30 +1,96 @@
 const sections = document.querySelectorAll('section');
 const listOfDots = document.querySelectorAll('li');
+const arrowUp = document.querySelector('#arrow-up');
+const arrowDown = document.querySelector('#arrow-down');
+arrowUp.innerHTML = '<i class="fas fa-chevron-up"></i>';
+arrowDown.innerHTML = '<i class="fas fa-chevron-down"></i>';
 let numberOfPage = 0;
 
-listOfDots.forEach((listOfDots, index) => {
-    listOfDots.id = index;
-    listOfDots.style.setProperty('--backgroundColorOfDot', '#ffffff28');
-    listOfDots.style.setProperty('--sizeOfDot', '10px');
-})
-for (let index = 0; index < listOfDots.length; index++) {
-    listOfDots[0].style.setProperty('--backgroundColorOfDot', '#ffffff');
-        listOfDots[0].style.setProperty('--sizeOfDot', '15px');
-    listOfDots[index].addEventListener('click', () => {
-        listOfDots.forEach(listOfDots => {
-            listOfDots.style.setProperty('--backgroundColorOfDot', '#ffffff28');
-            listOfDots.style.setProperty('--sizeOfDot', '10px');
-        })
-        listOfDots[index].style.setProperty('--backgroundColorOfDot', '#ffffff');
-        listOfDots[index].style.setProperty('--sizeOfDot', '15px');
+AddIdToScrollDotsAndDeflautStyles();
+UseArrowsToScrollPage();
+UseDotsToScrollPage();
+
+function AddIdToScrollDotsAndDeflautStyles(){
+    listOfDots.forEach((listOfDots, index) => {
+        listOfDots.id = index;
+        listOfDots.style.setProperty('--backgroundColorOfDot', '#ffffff28');
+        listOfDots.style.setProperty('--sizeOfDot', '10px');
+    })
+}
+function UseArrowsToScrollPage(){
+    arrowDown.addEventListener('click', () => {
+        console.log('click');
+        console.log(numberOfPage);
+        numberOfPage++;
+        if(numberOfPage <= 3){
+            ScrollPage();
+            SetStandardScrollDots();
+            SetSpecialScrollDot(numberOfPage);
+            arrowUp.style.display = 'flex';
+        }
+        if(numberOfPage === 3){
+            arrowDown.style.display = 'none';
+        }
+    });
+    arrowUp.addEventListener('click', () => {
+        console.log('click');
+        console.log(numberOfPage);
+        numberOfPage--;
+        if(numberOfPage >= 0){
+            ScrollPage();
+            SetStandardScrollDots();
+            SetSpecialScrollDot(numberOfPage);
+            arrowDown.style.display = 'flex';
+        }
+        if(numberOfPage === 0){
+            arrowUp.style.display = 'none';
+        }
     });
 }
-
-window.addEventListener('click', () => {
-    numberOfPage++;
+function UseDotsToScrollPage(){
+    for (let index = 0; index < listOfDots.length; index++) {
+        listOfDots[0].style.setProperty('--backgroundColorOfDot', '#ffffff');
+        listOfDots[0].style.setProperty('--sizeOfDot', '15px');
+        listOfDots[index].addEventListener('click', () => {
+            SetStandardScrollDots();
+            SetSpecialScrollDot(index);
+            sections.forEach((section, i) => {
+                if(i === index){
+                section.scrollIntoView({behavior: 'smooth'});
+                numberOfPage = index;
+                }
+            })
+            switch (index) {
+                case (0):
+                    arrowUp.style.display = 'none';
+                    arrowDown.style.display = 'flex';
+                break;
+                case (3):
+                    arrowUp.style.display = 'flex';
+                    arrowDown.style.display = 'none';
+                break;
+                default:
+                    arrowUp.style.display = 'flex';
+                    arrowDown.style.display = 'flex';
+                break;
+            }
+        });
+    }
+}
+function ScrollPage(){
     sections.forEach((section, i) => {
         if(i === numberOfPage){
-            section.scrollIntoView({behavior: 'smooth'});
+        section.scrollIntoView({behavior: 'smooth'});
         }
     })
-});
+}
+function SetStandardScrollDots(){
+    listOfDots.forEach(listOfDots => {
+        listOfDots.style.setProperty('--backgroundColorOfDot', '#ffffff28');
+        listOfDots.style.setProperty('--sizeOfDot', '10px');
+    })
+}
+function SetSpecialScrollDot(indexOfDot){
+    listOfDots[indexOfDot].style.setProperty('--backgroundColorOfDot', '#ffffff');
+    listOfDots[indexOfDot].style.setProperty('--sizeOfDot', '15px');
+}
