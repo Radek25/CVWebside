@@ -4,9 +4,12 @@ const arrowUp = document.querySelector('#arrow-up');
 const arrowDown = document.querySelector('#arrow-down');
 arrowUp.innerHTML = '<i class="fas fa-chevron-up"></i>';
 arrowDown.innerHTML = '<i class="fas fa-chevron-down"></i>';
+const polishLang = document.querySelector('#polish-lang');
+const englishLang = document.querySelector('#english-lang');
 let numberOfPage = 0;
 
 AddIdToScrollDotsAndDeflautStyles();
+SetLanguage();
 UseArrowsToScrollPage();
 UseDotsToScrollPage();
 
@@ -93,4 +96,18 @@ function SetStandardScrollDots(){
 function SetSpecialScrollDot(indexOfDot){
     listOfDots[indexOfDot].style.setProperty('--backgroundColorOfDot', '#ffffff');
     listOfDots[indexOfDot].style.setProperty('--sizeOfDot', '15px');
+}
+function SetLanguage(){
+    polishLang.addEventListener('click', () => {
+        polishLang.style.opacity = '0.9';
+        englishLang.style.opacity = '0.4';
+        polishLang.style.borderRight= '2px solid white';
+        englishLang.style.borderLeft = 'none';
+    });
+    englishLang.addEventListener('click', () => {
+        polishLang.style.opacity = '0.4';
+        englishLang.style.opacity = '0.9';
+        polishLang.style.borderRight= 'none';
+        englishLang.style.borderLeft = '2px solid white';
+    });
 }
