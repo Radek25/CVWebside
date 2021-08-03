@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b1320fcef3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>CVWebside</title>
 </head>
 <body>
     <main>
-        <nav>
-            <ul>
+        <nav class='standard-nav'>
+            <ul id='menu-list'>
+                <li>Home</li>
+                <li>O mnie</li>
+                <li>Portfolio</li>
+                <li>Technologie</li>
+                <li>Kontakt</li>
+            </ul>
+            <div class='language-button'>
+                <button id='polish-lang'>PL</button>
+                <button id='english-lang'>EN</button>
+            </div>
+        </nav>
+        <nav class='dots-and-arrow-nav'>
+            <ul id='dots-list'>
+                <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -21,22 +36,23 @@
             <button id='arrow-down'></button>
         </nav>
         <section>
-            <div class='language-button'>
-                <button id='polish-lang'>PL</button>
-                <button id='english-lang'>EN</button>
-            </div>
-            <div class='about-me'>
+            <article class='home-page'>
+                <header>
+                    <h1>Cześć!</h1>
+                    <h3>Jestem Radek</h3>
+                    <h6>Junior Front-End Developer</h6>
+                    <button id='meet-me-button'>Poznaj mnie!</button>
+                    <button id='get-my-CV-button'>Moje CV!</button>
+                </header>
                 <figure>
-                    <img src='./Imgs/my-photo.png' alt='My CV photo'>
-                </figure>
-                <article>
-                    <h2>Cześć!</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias reiciendis enim non cumque officiis inventore, incidunt minus voluptate quae aut amet nostrum porro dolorem quo est architecto in? Facere, eveniet.</p>
-                </article>
-            </div>
+                    <img src='./Imgs/ja7.png' alt='My CV photo'>
+                </figure> 
+            </article>
         </section>
         <section>
-            <h1>S2</h1>
+            <article class='about-me'>
+                <p>AAAAAAAAAAAAA</p>
+            </article>
         </section>
         <section>
             <h1>S3</h1>
@@ -44,6 +60,7 @@
         <section>
             <h1>S4</h1>
         </section>
+        <section></section>
     </main>
     <script type="text/javascript" src="main.js"></script>
 </body>
