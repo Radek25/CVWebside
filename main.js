@@ -7,12 +7,31 @@ arrowUp.innerHTML = '<i class="fas fa-chevron-up"></i>';
 arrowDown.innerHTML = '<i class="fas fa-chevron-down"></i>';
 const polishLang = document.querySelector('#polish-lang');
 const englishLang = document.querySelector('#english-lang');
+const meetMeButton = document.querySelector('#meet-me-button');
+const allProjects = document.querySelectorAll('.single-project'); 
+const allPhotoInProjects = document.querySelectorAll('.single-project > img');
+const allCheckBtn = document.querySelectorAll('.check-project-button');
+const percentBar = document.querySelectorAll('.top-part');
+const skillText = document.querySelectorAll('.text-wrapper');
 let numberOfPage = 0;
+
+// let a = document.querySelectorAll('.top-part');
+// console.log(a[0]);
+// window.addEventListener('dblclick', () => {
+//     console.log('Click');
+   
+//     console.log(a[0]);
+// })
+
+
 
 AddIdAndDeflautStylesToNavs();
 SetLanguage();
+ClickMeetMeButton();
 UseArrowsToScrollPage();
 UseDotsToScrollPage();
+AddIdToProjectsCardsAndAddStyleToSingleCard();
+
 
 function AddIdAndDeflautStylesToNavs(){
     listOfMenu.forEach((listOfMenu, index) => {
@@ -24,18 +43,35 @@ function AddIdAndDeflautStylesToNavs(){
         listOfDots.style.setProperty('--sizeOfDot', '10px');
     })
 }
+function AddIdToProjectsCardsAndAddStyleToSingleCard(){
+    allProjects.forEach((sinngleProject, i) => {
+        sinngleProject.id = i;
+    })
+    for (let index = 0; index < allProjects.length; index++) {
+        allProjects[index].addEventListener('mouseover', () => {
+            allCheckBtn[index].style.display = 'flex';
+            allPhotoInProjects[index].style.opacity = '0.4';
+
+        })
+        allProjects[index].addEventListener('mouseout', () => {
+            allPhotoInProjects[index].style.opacity = '1';
+            allCheckBtn[index].style.display = 'none';
+        })
+    }
+}
 function UseArrowsToScrollPage(){
     arrowDown.addEventListener('click', () => {
         numberOfPage++;
         if(numberOfPage <= 4){
             ScrollPage();
             SetStandardStylesToMenuAndDotsNav();
-           SetSpecialStylesToMenuAndDotsNav(numberOfPage);
+            SetSpecialStylesToMenuAndDotsNav(numberOfPage);
             arrowUp.style.display = 'flex';
         }
         if(numberOfPage === 4){
             arrowDown.style.display = 'none';
         }
+        AnimateSkillBars(numberOfPage);
     });
     arrowUp.addEventListener('click', () => {
         numberOfPage--;
@@ -48,6 +84,7 @@ function UseArrowsToScrollPage(){
         if(numberOfPage === 0){
             arrowUp.style.display = 'none';
         }
+        AnimateSkillBars(numberOfPage);
     });
 }
 function UseDotsToScrollPage(){
@@ -66,9 +103,9 @@ function UseDotsToScrollPage(){
                 }
             })
             SetArrows(index);
+            AnimateSkillBars(index);
         });
         listOfMenu[index].addEventListener('click', () => {
-            console.log(index);
             SetStandardStylesToMenuAndDotsNav();
             SetSpecialStylesToMenuAndDotsNav(index);
             sections.forEach((section, i) => {
@@ -77,6 +114,8 @@ function UseDotsToScrollPage(){
                 numberOfPage = index;
                 }
             })
+            SetArrows(index);
+            AnimateSkillBars(index);
         })
     }
 }
@@ -131,5 +170,30 @@ function SetArrows(indexOfPage){
             arrowUp.style.display = 'flex';
             arrowDown.style.display = 'flex';
         break;
+    }
+}
+function ClickMeetMeButton(){
+    meetMeButton.addEventListener('click', () => {
+        numberOfPage = 1;
+        SetStandardStylesToMenuAndDotsNav();
+        SetSpecialStylesToMenuAndDotsNav(numberOfPage);
+        ScrollPage();
+        SetArrows();
+    })
+}
+function AnimateSkillBars(numberOfPage){
+    if(numberOfPage === 3){
+        percentBar.forEach(percentBar => percentBar.classList.add('anim'))
+
+        skillText.forEach((skillText) => {
+            let percents = document.createElement('p');
+            skillText.appendChild(percents);
+            let count = 0;
+            let percentInterval = setInterval(() => {
+                percents.innerText = `${count}%`;
+                count++;
+                count === 86? clearInterval(percentInterval) : null;
+            },32);
+        })
     }
 }
