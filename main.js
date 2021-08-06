@@ -15,15 +15,16 @@ const percentBar = document.querySelectorAll('.top-part');
 const skillText = document.querySelectorAll('.text-wrapper');
 let numberOfPage = 0;
 
-// let a = document.querySelectorAll('.top-part');
-// console.log(a[0]);
-// window.addEventListener('dblclick', () => {
-//     console.log('Click');
-   
-//     console.log(a[0]);
-// })
-
-
+let DataToSkills = [
+    {maxNumber: 90, className: 'anim-bar1'},
+    {maxNumber: 85, className: 'anim-bar2'},
+    {maxNumber: 80, className: 'anim-bar3'},
+    {maxNumber: 75, className: 'anim-bar4'},
+    {maxNumber: 75, className: 'anim-bar5'},
+    {maxNumber: 70, className: 'anim-bar6'},
+    {maxNumber: 65, className: 'anim-bar7'},
+    {maxNumber: 50, className: 'anim-bar8'},
+];
 
 AddIdAndDeflautStylesToNavs();
 SetLanguage();
@@ -183,17 +184,17 @@ function ClickMeetMeButton(){
 }
 function AnimateSkillBars(numberOfPage){
     if(numberOfPage === 3){
-        percentBar.forEach(percentBar => percentBar.classList.add('anim'))
+        percentBar.forEach((percentBar, i) => percentBar.classList.add(`${DataToSkills[i].className}`))
 
-        skillText.forEach((skillText) => {
+        skillText.forEach((skillText, i) => {
             let percents = document.createElement('p');
             skillText.appendChild(percents);
             let count = 0;
             let percentInterval = setInterval(() => {
                 percents.innerText = `${count}%`;
                 count++;
-                count === 86? clearInterval(percentInterval) : null;
-            },32);
+                count === DataToSkills[i].maxNumber+1? clearInterval(percentInterval) : null;
+            },24);
         })
     }
 }

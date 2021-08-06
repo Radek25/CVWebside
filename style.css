@@ -317,26 +317,126 @@ h6{
     position: absolute;
     top: 20%;
 }
-.text-wrapper > img{
+.text-wrapper > figure{
+    height: 8vw;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.text-wrapper > figure > img{
     width: 5vw;
     height: 5vw;
-    position: absolute;
-    bottom: 0;
 }
 
-.anim{
+.anim-bar1{
     background-color: #f4ac34;
-    animation: 2s linear 1 0.7s rotate;
+    animation: 1.5s linear 1 0.5s html-bar-rotate;
     animation-fill-mode: forwards;
 }
-@keyframes rotate {
+.anim-bar2{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s css-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar3{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s sass-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar4{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s styled-components-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar5{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s javascript-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar6{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s typescript-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar7{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s react-bar-rotate;
+    animation-fill-mode: forwards;
+}
+.anim-bar8{
+    background-color: #f4ac34;
+    animation: 1.5s linear 1 0.5s csharp-bar-rotate;
+    animation-fill-mode: forwards;
+}
+@keyframes html-bar-rotate {
     from {
       transform: rotate(0deg)
     }
     to {
-      transform: rotate(160deg)
+      transform: rotate(162deg)
     }
 }
+@keyframes css-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(153deg)
+    }
+}
+@keyframes sass-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(144deg)
+    }
+}
+@keyframes styled-components-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(135deg)
+    }
+}
+@keyframes javascript-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(135deg)
+    }
+}
+@keyframes typescript-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(126deg)
+    }
+}
+@keyframes react-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(117deg)
+    }
+}
+@keyframes csharp-bar-rotate {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(90deg)
+    }
+}
+
 
 @keyframes ArrowUpAnimation{
     to{top: 8%;}
