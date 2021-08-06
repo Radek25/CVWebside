@@ -436,7 +436,98 @@ h6{
       transform: rotate(90deg)
     }
 }
-
+.contact-info, .contact-form{
+    width: 30%;
+    height: 85%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+h6{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+.contact-info > ul{
+    margin: 0;
+    padding: 0;
+}
+.contact-info > ul > li > a:link, a:visited, a:hover, a:active{
+    color: #636363;
+    background-color: transparent;
+    text-decoration: none;
+}
+.contact-info > ul > li > a:hover{
+    color: #909090;
+}
+.contact-info > ul > li{
+    display: flex;
+    align-items: center;
+    margin: 10% 0;
+}
+i{
+    margin: 0 8px 0 0;
+}
+.contact-form{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-field{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.email-field, .number-field{
+    width: 45%;
+}
+label{
+    width: 100%;
+    color: #636363;
+    font-size: 16px;
+    font-weight: 600;
+}
+input{
+    width: 85%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #363636;
+    outline: none;
+    color: #ffffff;
+    padding: 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.email-field > input, .number-field > input{
+    width: 75%;
+}
+textarea{
+    width: 85%;
+    min-height: 100px;
+    border-radius: 5px;
+    background-color: #363636;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.send-button{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    background-color: #f4ac34;
+    color: #ffffff;
+    font-weight: 600;
+}
 
 @keyframes ArrowUpAnimation{
     to{top: 8%;}

@@ -181,7 +181,45 @@
                 </div>
             </div>
         </section>
-        <section></section>
+        <section>
+            <div class='contact-info'>
+                <h6>Informacje kontaktowe</h6>
+                <ul>
+                    <li>
+                        <a href='mailto:radoslaw.kot25@gmail.com'><i class="fas fa-envelope"></i>radoslaw.kot25@gmail.com</a>
+                    </li>
+                    <li>
+                        <a href='tel:530-188-771'><i class="fas fa-phone-alt"></i>530 188 771</a>
+                    </li>
+                    <li>
+                        <a href='https://www.messenger.com/t/100003701643552/'><i class="fab fa-facebook-messenger"></i>Messenger</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='contact-form'>
+                <!-- <h6>Napisz do mnie</h6> -->
+                <form action='mailto:radoslaw.kot25@gmail.com' method="post">
+                    <div class='form-field'>
+                        <label for='name'>Imię</label> 
+                        <input type='text' placeholder='Type your name' id='name' maxlength = '30'/>
+                    </div>
+                    
+                    <div class='form-field email-field'>
+                            <label for='email'>Email</label> 
+                            <input type='email' placeholder='Type your e-mail' id='email' maxlength = '50'/>
+                    </div>
+                    <div class='form-field number-field'>
+                            <label for='number'>Numer telefonu</label> 
+                            <input type='tel' placeholder='Type your number' id='number' maxlength = '9'/>
+                    </div>
+                    <div class='form-field'>
+                        <label for='text'>Wiadomość</label> 
+                        <textarea id='text' placeholder='Type your message' maxlength='1000'></textarea>
+                    </div>
+                    <input class='send-button' type="submit" value="Wyślij" />
+                </form>
+            </div>
+        </section>
     </main>
     <script type="text/javascript" src="main.js"></script>
 </body>
