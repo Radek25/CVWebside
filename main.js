@@ -1,18 +1,16 @@
 const sections = document.querySelectorAll('section');
 const listOfMenu = document.querySelectorAll('#menu-list > li')
 const listOfDots = document.querySelectorAll('#dots-list > li');
-const arrowUp = document.querySelector('#arrow-up');
 const arrowDown = document.querySelector('#arrow-down');
-arrowUp.innerHTML = '<i class="fas fa-chevron-up"></i>';
-arrowDown.innerHTML = '<i class="fas fa-chevron-down"></i>';
-const polishLang = document.querySelector('#polish-lang');
-const englishLang = document.querySelector('#english-lang');
+const langButton = document.querySelector('#lang-button');
+let isPolishLang = true;
+langButton.innerHTML = 'PL';
 const meetMeButton = document.querySelector('#meet-me-button');
 const allProjects = document.querySelectorAll('.single-project'); 
 const allPhotoInProjects = document.querySelectorAll('.single-project > img');
 const allCheckBtn = document.querySelectorAll('.check-project-button');
 const percentBar = document.querySelectorAll('.top-part');
-const skillText = document.querySelectorAll('.text-wrapper');
+const skillText = document.querySelectorAll('.text-wrapper > p');
 let numberOfPage = 0;
 
 let DataToSkills = [
@@ -67,23 +65,9 @@ function UseArrowsToScrollPage(){
             ScrollPage();
             SetStandardStylesToMenuAndDotsNav();
             SetSpecialStylesToMenuAndDotsNav(numberOfPage);
-            arrowUp.style.display = 'flex';
         }
         if(numberOfPage === 4){
             arrowDown.style.display = 'none';
-        }
-        AnimateSkillBars(numberOfPage);
-    });
-    arrowUp.addEventListener('click', () => {
-        numberOfPage--;
-        if(numberOfPage >= 0){
-            ScrollPage();
-            SetStandardStylesToMenuAndDotsNav();
-            SetSpecialStylesToMenuAndDotsNav(numberOfPage);
-            arrowDown.style.display = 'flex';
-        }
-        if(numberOfPage === 0){
-            arrowUp.style.display = 'none';
         }
         AnimateSkillBars(numberOfPage);
     });
@@ -144,34 +128,14 @@ function SetSpecialStylesToMenuAndDotsNav(indexOfDot){
     listOfMenu[indexOfDot].style.borderBottom = '1px solid #f4ac34';
 }
 function SetLanguage(){
-    polishLang.addEventListener('click', () => {
-        polishLang.style.opacity = '0.9';
-        englishLang.style.opacity = '0.4';
-        polishLang.style.borderRight= '2px solid white';
-        englishLang.style.borderLeft = 'none';
-    });
-    englishLang.addEventListener('click', () => {
-        polishLang.style.opacity = '0.4';
-        englishLang.style.opacity = '0.9';
-        polishLang.style.borderRight= 'none';
-        englishLang.style.borderLeft = '2px solid white';
-    });
+    langButton.addEventListener('click', () => {
+        isPolishLang === true? 
+        (langButton.innerHTML = 'GB', isPolishLang = false):
+        (langButton.innerHTML = 'PL', isPolishLang = true)
+    })
 }
 function SetArrows(indexOfPage){
-    switch (indexOfPage) {
-        case (0):
-            arrowUp.style.display = 'none';
-            arrowDown.style.display = 'flex';
-        break;
-        case (4):
-            arrowUp.style.display = 'flex';
-            arrowDown.style.display = 'none';
-        break;
-        default:
-            arrowUp.style.display = 'flex';
-            arrowDown.style.display = 'flex';
-        break;
-    }
+    indexOfPage === 4 ? arrowDown.style.display = 'none' : arrowDown.style.display = 'flex';
 }
 function ClickMeetMeButton(){
     meetMeButton.addEventListener('click', () => {
@@ -184,17 +148,17 @@ function ClickMeetMeButton(){
 }
 function AnimateSkillBars(numberOfPage){
     if(numberOfPage === 3){
-        percentBar.forEach((percentBar, i) => percentBar.classList.add(`${DataToSkills[i].className}`))
-
+        percentBar.forEach((percentBar, i) => percentBar.classList.add(`${DataToSkills[i].className}`));
         skillText.forEach((skillText, i) => {
-            let percents = document.createElement('p');
-            skillText.appendChild(percents);
             let count = 0;
             let percentInterval = setInterval(() => {
-                percents.innerText = `${count}%`;
+                skillText.innerText = `${count}%`;
                 count++;
                 count === DataToSkills[i].maxNumber+1? clearInterval(percentInterval) : null;
             },24);
         })
+    }
+    else{
+        percentBar.forEach((percentBar, i) => percentBar.classList.remove(`${DataToSkills[i].className}`));
     }
 }
