@@ -156,6 +156,7 @@ header > h3, h6{
 .about-me > div > h3{
     color: #f4ac34;
     font-weight: 600;
+    font-size: 3vw;
 }
 /*Third Section (Portfolio) Styles*/
 .projects-container{
