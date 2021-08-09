@@ -92,6 +92,7 @@ ul{
     left: 50%;
     color: #ffffff;
     background-color: #202020;
+    cursor: pointer;
 }
 /*All Sections Styles*/
 section{
@@ -147,6 +148,7 @@ header > h3, h6{
 /*Second Section (About Me) Styles*/
 .about-me{
     width: 75%;
+    height: auto;
     padding: 10px;
     background-color: #363636;
     border-radius: 10px;

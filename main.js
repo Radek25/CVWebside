@@ -132,6 +132,7 @@ function SetLanguage(){
         isPolishLang === true? 
         (langButton.innerHTML = 'GB', isPolishLang = false):
         (langButton.innerHTML = 'PL', isPolishLang = true)
+        ChangeLanguage();
     })
 }
 function SetArrows(indexOfPage){
@@ -160,5 +161,53 @@ function AnimateSkillBars(numberOfPage){
     }
     else{
         percentBar.forEach((percentBar, i) => percentBar.classList.remove(`${DataToSkills[i].className}`));
+    }
+}
+function ChangeLanguage(){
+    let firstPageH1 = document.querySelector('header > h1');
+    let firstPageH3 = document.querySelector('header > h3');
+    let firstPageAboutMeButton = document.querySelector('#meet-me-button');
+    let firstPageCVButton = document.querySelector('#get-my-CV-button');
+    let secondPageH1 = document.querySelector('.about-me > div > h3');
+    let secondPageParagraph = document.querySelector('.about-me > div > p');
+    let thirdPageButtonGitHub = document.querySelector('.github-button');
+    let fifthPageButtonSend = document.querySelector('.send-button');
+    if(isPolishLang === true){
+        listOfMenu[0].innerText = 'Home';
+        listOfMenu[1].innerText = 'O mnie';
+        listOfMenu[2].innerText = 'Portfolio';
+        listOfMenu[3].innerText = 'Umiejętności';
+        listOfMenu[4].innerText = 'Kontakt';
+        firstPageH1.innerText = 'Cześć!';
+        firstPageH3.innerText = 'Jestem Radek';
+        firstPageAboutMeButton.innerText = 'Poznaj mnie';
+        firstPageCVButton.innerText = 'Moje CV';
+        secondPageH1.innerText = 'Witaj!'
+        secondPageParagraph.innerText =`Nazywam się Radosław Kot i jestem początkującym junior front-end developerem. Swoją przygodę z programowaniem rozpocząłem dwa lata temu, kiedy po skończeniu Technikum Łączności w Krakowie
+        wybrałem studia w Wyższej Szkole Informatyki i Ekonometrii w Krakowie na kierunku Informatyka i Ekonometria.
+        Podczas dotychczasowego okresu studiów rozwijałem swoją wiedzę gównie pod kątem specjalizaji Front-End Developer,
+        a także poznawałem podstawy baz danych (TSQL) oraz języka C#.
+        Programowanie jest dla mnie jak łamigłówka, której rozwiązywanie sprawia przyjemności i uczy logicznego myślenia,
+        a każdy wykonany projekt to kolejny szczebel pozwalający nauczyć się nowych, nieznanych rzeczy.`
+        thirdPageButtonGitHub.innerText = 'Przejdź na mój GitHub';
+        fifthPageButtonSend.innerText = 'Wyślij!'
+    }
+    else{
+        listOfMenu[0].innerText = 'Home';
+        listOfMenu[1].innerText = 'About Me';
+        listOfMenu[2].innerText = 'Portfolio';
+        listOfMenu[3].innerText = 'Skills';
+        listOfMenu[4].innerText = 'Contact';
+        firstPageH1.innerText = 'Hello!';
+        firstPageH3.innerText = 'I am Radek';
+        firstPageAboutMeButton.innerText = 'Meet me';
+        firstPageCVButton.innerText = 'My CV';
+        secondPageH1.innerText = 'Hi!'
+        secondPageParagraph.innerText =`Swoją przygodę z programowaniem rozpocząłem dwa lata temu, kiedy po skończeniu Technikum Łączności w Krakowie
+        wybrałem studia w Wyższej Szkole Informatyki i Ekonometrii w Krakowie na kierunku Informatyka i Ekonometria.
+        Podczas dotychczasowego okresu studiów rozwijałem swoją wiedzę gównie pod kątem specjalizaji Front-End Developer,
+        a także poznawałem podstawy baz danych (TSQL) oraz języka C#.`
+        thirdPageButtonGitHub.innerText = 'Go to my GitHub';
+        fifthPageButtonSend.innerText = 'Send!'
     }
 }
