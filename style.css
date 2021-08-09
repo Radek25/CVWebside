@@ -177,16 +177,18 @@ header > h3, h6{
     border-bottom: 8px solid #f4ac34;
     border-top: 8px solid #f4ac34;
 }
-.check-project-button{
-    width: 75%;
-    height: 20%;
+a > .check-project-button{
+    width: 50%;
+    height: 50%;
     font-weight: 600;
-    font-size: 1.5vw;
+    font-size: 100%;
     color: #ffffff;
     background-color: #202020;
     border: 1px solid #ffffff;
-    border-radius: 20px;
+    border-radius: 100%;
     position: absolute;
+    top: 20%;
+    left: 25%;
     display: none;
     justify-content: center;
     align-items: center;

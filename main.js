@@ -23,7 +23,7 @@ let DataToSkills = [
     {maxNumber: 65, className: 'anim-bar7'},
     {maxNumber: 50, className: 'anim-bar8'},
 ];
-
+// UseSwipeToScrollPage();
 AddIdAndDeflautStylesToNavs();
 SetLanguage();
 ClickMeetMeButton();
@@ -104,6 +104,14 @@ function UseDotsToScrollPage(){
         })
     }
 }
+// function UseSwipeToScrollPage(){
+//     let startPos = document.body.ontouchstart[0].clientY;
+//     console.log(startPos);
+//     window.addEventListener('touchmove', (e)=> {
+//         console.log('AAA!');
+//         console.log(e.changedTouches[0].clientY);
+//     })
+// }
 function ScrollPage(){
     sections.forEach((section, i) => {
         if(i === numberOfPage){
@@ -183,12 +191,7 @@ function ChangeLanguage(){
         firstPageAboutMeButton.innerText = 'Poznaj mnie';
         firstPageCVButton.innerText = 'Moje CV';
         secondPageH1.innerText = 'Witaj!'
-        secondPageParagraph.innerText =`Nazywam się Radosław Kot i jestem początkującym junior front-end developerem. Swoją przygodę z programowaniem rozpocząłem dwa lata temu, kiedy po skończeniu Technikum Łączności w Krakowie
-        wybrałem studia w Wyższej Szkole Informatyki i Ekonometrii w Krakowie na kierunku Informatyka i Ekonometria.
-        Podczas dotychczasowego okresu studiów rozwijałem swoją wiedzę gównie pod kątem specjalizaji Front-End Developer,
-        a także poznawałem podstawy baz danych (TSQL) oraz języka C#.
-        Programowanie jest dla mnie jak łamigłówka, której rozwiązywanie sprawia przyjemności i uczy logicznego myślenia,
-        a każdy wykonany projekt to kolejny szczebel pozwalający nauczyć się nowych, nieznanych rzeczy.`
+        secondPageParagraph.innerText =`Nazywam się Radosław Kot i jestem początkującym junior front-end developerem. Swoją przygodę z programowaniem rozpocząłem dwa lata temu, kiedy po skończeniu Technikum Łączności w Krakowie wybrałem studia w Wyższej Szkole Informatyki i Ekonometrii w Krakowie na kierunku Informatyka i Ekonometria. Podczas dotychczasowego okresu studiów rozwijałem swoją wiedzę gównie pod kątem specjalizaji Front-End Developer, a także poznawałem podstawy baz danych (TSQL) oraz języka C#. Programowanie jest dla mnie jak łamigłówka, której rozwiązywanie sprawia przyjemności i uczy logicznego myślenia, a każdy wykonany projekt to kolejny szczebel pozwalający nauczyć się nowych, nieznanych rzeczy.`
         thirdPageButtonGitHub.innerText = 'Przejdź na mój GitHub';
         fifthPageButtonSend.innerText = 'Wyślij!'
     }
@@ -202,12 +205,8 @@ function ChangeLanguage(){
         firstPageH3.innerText = 'I am Radek';
         firstPageAboutMeButton.innerText = 'Meet me';
         firstPageCVButton.innerText = 'My CV';
-        secondPageH1.innerText = 'Hi!'
-        secondPageParagraph.innerText =`Swoją przygodę z programowaniem rozpocząłem dwa lata temu, kiedy po skończeniu Technikum Łączności w Krakowie
-        wybrałem studia w Wyższej Szkole Informatyki i Ekonometrii w Krakowie na kierunku Informatyka i Ekonometria.
-        Podczas dotychczasowego okresu studiów rozwijałem swoją wiedzę gównie pod kątem specjalizaji Front-End Developer,
-        a także poznawałem podstawy baz danych (TSQL) oraz języka C#.`
-        thirdPageButtonGitHub.innerText = 'Go to my GitHub';
+        secondPageH1.innerText = 'Welcome!'
+        secondPageParagraph.innerText =`My name is Radosław Kot and I’m a novice junior front-end developer. I have begun my adventure with programming two years ago just after finishing Technikum Łączności in Kraków and choosing the faculty of Computer Science and Econometrics at Wyższa Szkoła Informatyki i Ekonometrii in Kraków. During my studies not only have I been developing my knowledge in the realm of Front-End Developing, but I also have had a chance to learn about basics of database (TSQL) and to practice C# programming language. I feel like computer programming resembles  a riddle - solving it brings joy and logical thinking ability and yet every single project  gets you closer to the glimpsing of something new and unexpected.`;
         fifthPageButtonSend.innerText = 'Send!'
     }
 }
