@@ -23,14 +23,13 @@ let DataToSkills = [
     {maxNumber: 65, className: 'anim-bar7'},
     {maxNumber: 50, className: 'anim-bar8'},
 ];
-// UseSwipeToScrollPage();
+
 AddIdAndDeflautStylesToNavs();
 SetLanguage();
 ClickMeetMeButton();
 UseArrowsToScrollPage();
 UseDotsToScrollPage();
 AddIdToProjectsCardsAndAddStyleToSingleCard();
-
 
 function AddIdAndDeflautStylesToNavs(){
     listOfMenu.forEach((listOfMenu, index) => {
@@ -70,7 +69,6 @@ function UseArrowsToScrollPage(){
             arrowDown.style.display = 'none';
         }
         AnimateSkillBars(numberOfPage);
-        Test(numberOfPage);
     });
 }
 function UseDotsToScrollPage(){
@@ -90,7 +88,6 @@ function UseDotsToScrollPage(){
             })
             SetArrows(index);
             AnimateSkillBars(index);
-            Test(index);
         });
         listOfMenu[index].addEventListener('click', () => {
             SetStandardStylesToMenuAndDotsNav();
@@ -103,18 +100,9 @@ function UseDotsToScrollPage(){
             })
             SetArrows(index);
             AnimateSkillBars(index);
-            Test(index);
         })
     }
 }
-// function UseSwipeToScrollPage(){
-//     let startPos = document.body.ontouchstart[0].clientY;
-//     console.log(startPos);
-//     window.addEventListener('touchmove', (e)=> {
-//         console.log('AAA!');
-//         console.log(e.changedTouches[0].clientY);
-//     })
-// }
 function ScrollPage(){
     sections.forEach((section, i) => {
         if(i === numberOfPage){
@@ -211,14 +199,5 @@ function ChangeLanguage(){
         secondPageH1.innerText = 'Welcome!'
         secondPageParagraph.innerText =`My name is Radosław Kot and I’m a novice junior front-end developer. I have begun my adventure with programming two years ago just after finishing Technikum Łączności in Kraków and choosing the faculty of Computer Science and Econometrics at Wyższa Szkoła Informatyki i Ekonometrii in Kraków. During my studies not only have I been developing my knowledge in the realm of Front-End Developing, but I also have had a chance to learn about basics of database (TSQL) and to practice C# programming language. I feel like computer programming resembles  a riddle - solving it brings joy and logical thinking ability and yet every single project  gets you closer to the glimpsing of something new and unexpected.`;
         fifthPageButtonSend.innerText = 'Send!'
-    }
-}
-function Test(numberOfPage){
-    let skillsWrapper = document.querySelector('.skills-container');
-    if(numberOfPage === 4){
-        skillsWrapper.style.display = 'none';
-    }
-    else{
-        skillsWrapper.style.display = 'flex';
     }
 }
