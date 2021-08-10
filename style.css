@@ -97,7 +97,8 @@ ul{
 /*All Sections Styles*/
 section{
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
+    height: 100vh;
     padding: 50px 0;
     box-sizing: border-box;
     background-color: #202020;
