@@ -98,6 +98,7 @@ ul{
 section{
     width: 100%;
     height: 100vh;
+    min-height: 100px;
     padding: 50px 0;
     box-sizing: border-box;
     background-color: #202020;
