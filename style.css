@@ -83,7 +83,6 @@ ul{
 }
 #arrow-down{
     top: 90%;
-    font-size: 5vw;
     animation: ArrowDownAnimation 0.8s linear 0s infinite alternate;
     margin: 0;
     padding: 0;
@@ -391,6 +390,9 @@ textarea{
         height: 6vw;
         font-size: 2.5vw;
     }
+    #arrow-down{
+        font-size: 5vw;
+    }
     .section{
         min-height: 150px;
     }
@@ -512,6 +514,9 @@ textarea{
         height: 3.5vw;
         font-size: 1.5vw;
     }
+    #arrow-down{
+        font-size: 4vw;
+    }
     .section{
         min-height: 150px;
     }
@@ -614,6 +619,9 @@ textarea{
         width: 2.5vw;
         height: 2.5vw;
         font-size: 1vw;
+    }
+    #arrow-down{
+        font-size: 3vw;
     }
     /*First Section (Home) Styles - RWD*/
     .home-page{
