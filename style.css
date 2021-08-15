@@ -393,9 +393,6 @@ textarea{
     #arrow-down{
         font-size: 5vw;
     }
-    .section{
-        min-height: 120px;
-    }
     /*First Section (Home) Styles - RWD*/
     .home-page{
         width: 65%;
@@ -516,9 +513,6 @@ textarea{
     }
     #arrow-down{
         font-size: 4vw;
-    }
-    .section{
-        min-height: 50px;
     }
     /*First Section (Home) Styles - RWD*/
     .home-page{
