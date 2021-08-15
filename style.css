@@ -82,8 +82,8 @@ ul{
     background-color: var(--backgroundColorOfDot);
 }
 #arrow-down{
-    top: 92%;
-    font-size: 2vw;
+    top: 90%;
+    font-size: 5vw;
     animation: ArrowDownAnimation 0.8s linear 0s infinite alternate;
     margin: 0;
     padding: 0;
@@ -98,7 +98,6 @@ ul{
 section{
     width: 100%;
     height: 100vh;
-    min-height: 100px;
     padding: 50px 0;
     box-sizing: border-box;
     background-color: #202020;
@@ -392,6 +391,9 @@ textarea{
         height: 6vw;
         font-size: 2.5vw;
     }
+    .section{
+        min-height: 150px;
+    }
     /*First Section (Home) Styles - RWD*/
     .home-page{
         width: 65%;
@@ -509,6 +511,9 @@ textarea{
         width: 3.5vw;
         height: 3.5vw;
         font-size: 1.5vw;
+    }
+    .section{
+        min-height: 150px;
     }
     /*First Section (Home) Styles - RWD*/
     .home-page{
@@ -715,7 +720,7 @@ textarea{
     }
   }
 @keyframes ArrowDownAnimation{
-    to{top: 94%;}
+    to{top: 92%;}
 }
 @keyframes ShowPhotoAnimation {
     0% {
