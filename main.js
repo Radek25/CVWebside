@@ -169,7 +169,7 @@ function ChangeLanguage(){
     let firstPageCVButton = document.querySelector('#get-my-CV-button');
     let secondPageH1 = document.querySelector('.about-me > div > h3');
     let secondPageParagraph = document.querySelector('.about-me > div > p');
-    let thirdPageButtonGitHub = document.querySelector('.github-button');
+    let thirdPageButtonGitHub = document.querySelector('a > .github-button');
     let fifthPageButtonSend = document.querySelector('.send-button');
     if(isPolishLang === true){
         listOfMenu[0].innerText = 'Home';
@@ -198,6 +198,7 @@ function ChangeLanguage(){
         firstPageCVButton.innerText = 'My CV';
         secondPageH1.innerText = 'Welcome!'
         secondPageParagraph.innerText =`My name is Radosław Kot and I’m a novice junior front-end developer. I have begun my adventure with programming two years ago just after finishing Technikum Łączności in Kraków and choosing the faculty of Computer Science and Econometrics at Wyższa Szkoła Informatyki i Ekonometrii in Kraków. During my studies not only have I been developing my knowledge in the realm of Front-End Developing, but I also have had a chance to learn about basics of database (TSQL) and to practice C# programming language. I feel like computer programming resembles  a riddle - solving it brings joy and logical thinking ability and yet every single project  gets you closer to the glimpsing of something new and unexpected.`;
+        thirdPageButtonGitHub.innerText = 'Go to my GitHub';
         fifthPageButtonSend.innerText = 'Send!'
     }
 }
