@@ -332,6 +332,11 @@ a > .check-project-button{
     justify-content: left;
     flex-wrap: wrap;
 }
+h5{
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+}
 form{
     width: 100%;
     display: flex;
@@ -489,15 +494,18 @@ textarea{
         height: 8vw;
     }
     /*Fifth Section (Contact) Styles - RWD*/
-    input, textarea{
-        height: 30px;
+    .contact-form{
+        display: none;
     }
-    textarea{
-        height: 100px;
+    h5{
+        display: flex;
     }
-    .send-button{
-        width: 150px;
-        height: 40px;
+    .contact-info > ul{
+        display: block;
+        text-align: center;
+    }
+    .contact-info > ul > li{
+        margin: 25px 0;
     }
 }
 @media only screen and (min-width: 531px) and (max-width: 1007px){
@@ -589,18 +597,15 @@ textarea{
         font-size: 1.2vw;
     }
     /*Fifth Section (Contact) Styles - RWD*/
-    input, textarea{
-        height: 25px;
+    .contact-form{
+        display: none;
     }
-    textarea{
-        height: 100px;
-    }
-    .send-button{
-        width: 50px;
-        height: 30px;
+    h5{
+        display: flex;
     }
     .contact-info > ul{
-        flex-wrap: nowrap;
+        display: block;
+        text-align: center;
     }
 }
 @media only screen and (min-width: 1008px){
@@ -697,6 +702,9 @@ textarea{
     .contact-form{
         margin-top: 5vw;
         width: 45%;
+    }
+    h5{
+        display: none;
     }
     input, textarea{
         height: 30px;
